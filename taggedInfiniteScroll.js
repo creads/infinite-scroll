@@ -29,10 +29,9 @@
           if (scope.disabled) {
             return;
           }
-          var windowHeight = win[0].innerHeight;
-          var elementBottom = elem[0].offsetTop + elem[0].offsetHeight;
-          var windowBottom = windowHeight + (win[0].scrollY || win[0].pageYOffset);
-          var remaining = elementBottom - windowBottom;
+          var containerHeight = elem[0].scrollHeight;
+          var scrollOffsetBottom = elem[0].scrollTop + elem[0].offsetHeight;
+          var remaining = containerHeight - scrollOffsetBottom;
           var shouldGetMore = (remaining - parseInt(scope.distance || 0, 10) <= 0);
 
           if (shouldGetMore) {
