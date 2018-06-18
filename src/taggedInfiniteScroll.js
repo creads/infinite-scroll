@@ -43,11 +43,11 @@
             if (false === isDisabled) onScroll();
         });
 
-        win.bind('scroll', onScroll);
+        elem.bind('scroll', onScroll);
 
         // Remove window scroll handler when this element is removed.
         scope.$on('$destroy', function() {
-          win.unbind('scroll', onScroll);
+          elem.unbind('scroll', onScroll);
         });
 
         // Check on next event loop to give the browser a moment to paint.
